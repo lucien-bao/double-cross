@@ -1,0 +1,35 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+main {
+    margin-left: 7rem;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.sidebar {
+    width: 20%;
+    float: left;
+}
+
+.sidebar a {
+    font-size: 1.5rem;
+    line-height: 140%;
+}
+
+.body {
+    display: flex;
+}
