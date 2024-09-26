@@ -4,13 +4,14 @@
         <title>F&F Fox Sanctuary</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="logo-min.png" />
     </head>
     
     <body>
         <header>
             <a href="index.html">
                 <img
-                    src="logo-min.jpg"
+                    src="logo-min.png"
                     width="100rem"
                     height="100rem"
                     style="display: inline"
@@ -21,16 +22,190 @@
             </div>
         </header>
         
-        <div id="body">
-            <nav id="sidebar" style="position: fixed;">
-                <a href="index.html">Home</a><br />
-                <a href="contact.html">Contact</a><br />
-                <a href="#">Give</a><br />
-            </nav>
-            
-            <main>
-                <h1>Give</h1>
-            </main>
+        <div class="banner" id="give">
+            <p>
+                Lend a paw to a furry friend in need
+            </p>
         </div>
+
+        <main>
+            <h1>Give</h1>
+            <p id="subtitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                a second chance</p>
+
+            <p>
+                At Fennec and Friends Fox Sanctuary, your support makes all the
+                difference. By donating, you help provide essential care,
+                shelter, and medical treatment to rescued foxes, giving them a
+                second chance at life in a safe and nurturing environment. Every
+                contribution directly impacts our ability to protect these
+                incredible animals, expand our sanctuary, and continue vital
+                conservation efforts. Whether it's food, medical supplies, or
+                habitat maintenance, your generosity ensures that these foxes
+                can thrive. Join us in making a lasting difference &mdash;
+                donate today to help protect and care for our furry friends at
+                Fennec and Friends!
+            </p>
+
+            <p
+                style="border-radius: 0.5rem;
+                        margin-bottom: 1rem;
+                        padding: 1rem;
+                        color: #aa0000;
+                        background-color: #ffbbbb;
+                        border-color: #aa0000;
+                        border-width: 2px;
+                        border-style: solid;
+                        max-width: 600px;"
+            >
+                NOTE: this form does not do anything! Even so, please do not
+                enter sensitive information into this form.
+            </p>
+            <p style="color: #aa0000">
+                All fields are required unless marked otherwise.
+            </p>
+
+            <form action="#">
+                <div style="width:40%;">
+                    <h2>Billing information</h2>
+                    <label>
+                        Full name <br />
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            required
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Address line 1 <br />
+                        <input
+                            type="text"
+                            name="addr1"
+                            required
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Address line 2 (optional) <br />
+                        <input
+                            type="text"
+                            name="addr2"
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Country <br />
+                        <!-- Should be a dropdown but it would swamp this form
+                            with too many lines -->
+                        <input
+                            type="text"
+                            name="country"
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        State/province <br />
+                        <!-- Same as above -->
+                        <input
+                            type="text"
+                            name="state"
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        City/town <br />
+                        <input
+                            type="text"
+                            name="city"
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Zip code <br />
+                        <input
+                            type="text"
+                            name="zip"
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Phone number <br />
+                        <input
+                            type="text"
+                            name="phone"
+                        />
+                    </label>
+                    <br />
+                </div>
+
+                <div style="position: relative; padding-bottom: 2rem;">
+                    <h2>Credit/debit card information</h2>
+                    <label>
+                        Credit card number <br />
+                        <input
+                            type="text"
+                            name="card"
+                            placeholder="123456789012"
+                            required
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Expiration date <br />
+                        <input
+                            type="text"
+                            name="month"
+                            placeholder="MM"
+                            class="half-width"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="year"
+                            placeholder="YY"
+                            class="half-width"
+                            required
+                        />
+                    </label>
+                    <br />
+
+                    <label>
+                        Security code <br />
+                        <input
+                            type="text"
+                            name="cvv"
+                            placeholder="XXX"
+                            required
+                        />
+                    </label>
+                    <br />
+
+
+                    <button type="submit" id="submit">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <nav style="width: 100%; height: 100%;">
+                <div id="footer-list">
+                    <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Give</a>
+                </div>
+            </nav>
+        </footer>
     </body>
 </html>

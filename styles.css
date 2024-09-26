@@ -27,19 +27,36 @@ header {
     font-weight: bolder;
 }
 
-#banner {
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("hero-fennec-compressed.jpg");
+.banner {
     height: 30rem;
-    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     box-sizing: border-box;
 }
 
-#banner p {
+.banner#home {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("hero-fennec-compressed.jpg");
+    background-position: bottom;
+}
+
+.banner#contact {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("contact-banner-min.jpg");
+    background-position: center;
+}
+
+.banner#give {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("give-banner-min.jpg");
+    background-position: center;
+}
+
+.banner p {
     font-size: 2.8rem;
     color: #ffffff;
     text-align: center;
@@ -57,8 +74,8 @@ main {
     /* must be at least height of footer */
     margin-bottom: 5rem;
 
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 main h1 {
@@ -76,10 +93,43 @@ main h2 {
 
 main p {
     margin-top: 0.5rem;
+    line-height: 1.4rem;
 }
 
-main img {
-    min-width: 400px;
+@media (width > 800px) {
+    form {
+        display: flex;
+    }
+}
+
+input {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    width: 12rem;
+}
+
+input.half-width {
+    width: 5.6rem;
+}
+
+button#submit {
+    margin-top: 1rem;
+    padding: 0.4rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: #000000;
+    border: none;
+    background-color: #cccccc;
+
+    position: absolute;
+    bottom: 0;
+}
+
+button#submit:hover {
+    background-color: #f1cb59;
+    cursor: pointer;
 }
 
 footer {
