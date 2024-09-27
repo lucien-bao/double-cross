@@ -21,10 +21,42 @@ header {
 }
 
 #title {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
-    margin: 1.5rem;
+    margin-right: 1.5rem;
     font-weight: bolder;
+}
+
+header img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.mobile {
+    display: inline-block;
+}
+
+.large {
+    display: none;
+}
+
+@media (width > 800px) {
+    #title {
+        font-size: 2.5rem;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .large {
+        display: inline-block;
+    }
+
+    header img {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
 }
 
 .banner {
@@ -80,11 +112,14 @@ main {
 
 main h1 {
     margin-bottom: 0.5rem;
+    display: inline-block;
 }
 
 main #subtitle {
     font-size: 1.5rem;
     margin-top: 0;
+    margin-left: 0.5rem;
+    display: inline-block;
 }
 
 main h2 {
