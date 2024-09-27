@@ -6,6 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="logo-min.png" />
+
+        <style>
+            input {
+                margin-top: 0.2rem;
+                margin-bottom: 0.2rem;
+                width: 12rem;
+            }
+
+            input.half-width {
+                width: 5.6rem;
+            }
+
+            button#submit {
+                margin-top: 1rem;
+                padding: 0.4rem;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+                border-radius: 0.5rem;
+                text-decoration: none;
+                color: #000000;
+                border: none;
+                background-color: #cccccc;
+
+                position: absolute;
+                bottom: 0;
+            }
+
+            button#submit:hover {
+                background-color: #f1cb59;
+                cursor: pointer;
+            }
+
+            @media (width > 800px) {
+                form {
+                    display: flex;
+                }
+            }
+        </style>
     </head>
     
     <body>
@@ -195,6 +233,20 @@
                     </button>
                 </div>
             </form>
+
+            <h2>Wishlist</h2>
+            <p>
+                Prefer a more personal gift? Our facilities keep a wishlist up
+                of items that we would love for you to donate!
+            </p>
+
+            <ul>
+                <li>Raw chicken drumsticks</li>
+                <li>Eggs</li>
+                <li>Mulch/wood chips</li>
+                <li>Astroturf</li>
+                <li>Lumber</li>
+            </ul>
         </main>
 
         <footer>

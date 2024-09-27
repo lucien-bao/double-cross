@@ -106,8 +106,15 @@ main {
     /* must be at least height of footer */
     margin-bottom: 5rem;
 
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+@media (width > 800px) {
+    main {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
 }
 
 main h1 {
@@ -131,40 +138,8 @@ main p {
     line-height: 1.4rem;
 }
 
-@media (width > 800px) {
-    form {
-        display: flex;
-    }
-}
-
-input {
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-    width: 12rem;
-}
-
-input.half-width {
-    width: 5.6rem;
-}
-
-button#submit {
-    margin-top: 1rem;
-    padding: 0.4rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    color: #000000;
-    border: none;
-    background-color: #cccccc;
-
-    position: absolute;
-    bottom: 0;
-}
-
-button#submit:hover {
-    background-color: #f1cb59;
-    cursor: pointer;
+ul {
+    padding-left: 1.5rem;
 }
 
 footer {
