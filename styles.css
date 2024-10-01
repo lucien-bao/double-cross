@@ -172,6 +172,14 @@ footer a {
     font-weight: bolder;
 }
 
-footer a:hover {
+a {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    color: #c39600;
+    text-decoration: none;
+}
+
+a:hover {
     background-color: #f1cb59;
+    color: #000000;
 }
