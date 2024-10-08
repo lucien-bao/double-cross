@@ -82,17 +82,15 @@
                 getElement("subtotalAfterDiscount").innerHTML =
                         showMoney(subtotalAfterDiscount);
 
-                console.log(getElement("discountRow").style.display);
-
-                // if(discount === 0) {
-                //     getElement("discountRow").style.display = "none";
-                //     getElement("subtotalAfterDiscountRow").style.display
-                //             = "none";
-                // } else {
-                //     getElement("discountRow").style.display = "block";
-                //     getElement("subtotalAfterDiscountRow").style.display
-                //             = "block";
-                // }
+                if(discount === 0) {
+                    getElement("discountRow").style.display = "none";
+                    getElement("subtotalAfterDiscountRow").style.display
+                            = "none";
+                } else {
+                    getElement("discountRow").style.display = "table-row";
+                    getElement("subtotalAfterDiscountRow").style.display
+                            = "table-row";
+                }
 
                 getElement("tax").innerHTML = showMoney(tax);
                 getElement("total").innerHTML = showMoney(total);
