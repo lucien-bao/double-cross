@@ -33,27 +33,60 @@
                 return (asString + "00").slice(0, decimalIndex + 3)
             }
 
-            // User input
-            const numDogs  = parseInt(prompt("Enter number of hot dogs: "));
-            const numFries = parseInt(prompt("Enter number of french fries: "));
-            const numSoda  = parseInt(prompt("Enter number of sodas: "));
+            let numDogs, numFries, numSoda;
+            let totalDogs, totalFries, totalSoda;
+            let subtotal, discount, subtotalAfterDiscount, tax, total;
+            /**
+             * Gets the user's order and updates state.
+             */
+            const getOrder = () => {
+                // User input
+                numDogs  = parseInt(prompt("Enter number of hot dogs: "));
+                numFries = parseInt(prompt("Enter number of french fries: "));
+                numSoda  = parseInt(prompt("Enter number of sodas: "));
 
-            // Calculation
-            const totalDogs  = PRICE_DOGS  * numDogs;
-            const totalFries = PRICE_FRIES * numFries;
-            const totalSoda  = PRICE_SODA  * numSoda;
-            const subtotal   = totalDogs + totalFries + totalSoda;
+                // Calculation
+                totalDogs  = PRICE_DOGS  * numDogs;
+                totalFries = PRICE_FRIES * numFries;
+                totalSoda  = PRICE_SODA  * numSoda;
+                subtotal   = totalDogs + totalFries + totalSoda;
 
-            // Discount is signed
-            const discount = (subtotal >= 25) ? subtotal * -0.1 : 0;
-            const subtotalAfterDiscount = subtotal + discount;
+                // Discount is signed
+                discount = (subtotal >= 25) ? subtotal * -0.1 : 0;
+                subtotalAfterDiscount = subtotal + discount;
 
-            const tax   = subtotal * MEALS_TAX;
-            const total = subtotal + tax;
+                tax   = subtotalAfterDiscount * MEALS_TAX;
+                total = subtotalAfterDiscount + tax;
+            }
+
+            /**
+             * Updates receipt based on state.
+             */
+            const updateReceipt = () => {
+                const getElement = (id) => {return document.getElementById(id)};
+
+                getElement("numDogs").innerHTML = numDogs;
+                getElement("totalDogs").innerHTML = showMoney(totalDogs);
+                getElement("numFries").innerHTML = numFries;
+                getElement("totalFries").innerHTML = showMoney(totalFries);
+                getElement("numSoda").innerHTML = numSoda;
+                getElement("totalSoda").innerHTML = showMoney(totalSoda);
+
+                getElement("subtotal").innerHTML = showMoney(subtotal);
+                getElement("discount").innerHTML = showMoney(discount);
+                getElement("subtotalAfterDiscount").innerHTML =
+                        showMoney(subtotalAfterDiscount);
+                getElement("tax").innerHTML = showMoney(tax);
+                getElement("total").innerHTML = showMoney(total);
+            }
         </script>
 
         <main>
             <h1>Joe's Hot Dog Stand</h1>
+
+            <button type="button" onclick="getOrder(); updateReceipt();">Order</button>
+
+            <h2>Receipt</h2>
             <table>
                 <!-- Header row -->
                 <tr>
@@ -67,30 +100,24 @@
                     <td>
                         Hot dogs
                     </td>
-                    <script>
-                        document.write("<td>" + numDogs + "</td>"
-                                     + "<td>" + showMoney(totalDogs) + "</td>");
-                    </script>
+                    <td id="numDogs"></td>
+                    <td id="totalDogs"></td>
                 </tr>
                 
                 <tr>
                     <td>
                         Fries
                     </td>
-                    <script>
-                        document.write("<td>" + numFries + "</td>"
-                                     + "<td>" + showMoney(totalFries) + "</td>");
-                    </script>
+                    <td id="numFries"></td>
+                    <td id="totalFries"></td>
                 </tr>
                 
                 <tr>
                     <td>
                         Soda
                     </td>
-                    <script>
-                        document.write("<td>" + numSoda + "</td>"
-                                     + "<td>" + showMoney(totalSoda) + "</td>");
-                    </script>
+                    <td id="numSoda"></td>
+                    <td id="totalSoda"></td>
                 </tr>
 
                 <!-- Subtotal row -->
@@ -100,30 +127,46 @@
                     </td>
                     <!-- Dummy cell, N/A -->
                     <td></td>
-                    <script>
-                        document.write("<td>" + showMoney(subtotal) + "</td>");
-                    </script>
+                    <td id="subtotal"></td>
                 </tr>
 
-                <!-- Discount row, new subtotal row (if applicable) -->
-                <script>
-                    if(discount !== 0) {
-                        document.write(
-                            `
-                            <tr>
-                                <td>Discount</td>
-                                <td></td>
-                                <td>${showMoney(discount)}</td>
-                            </tr>
-                            <tr>
-                                <td>Subtotal after discount</td>
-                                <td></td>
-                                <td>${showMoney(subtotalAfterDiscount)}</td>
-                            </tr>
-                            `
-                        )
-                    }
-                </script>
+                <!-- Discount row, new subtotal row -->
+                <tr>
+                    <td>
+                        Discount
+                    </td>
+                    <!-- Dummy cell, N/A -->
+                    <td></td>
+                    <td id="discount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Subtotal after discount
+                    </td>
+                    <!-- Dummy cell, N/A -->
+                    <td></td>
+                    <td id="subtotalAfterDiscount"></td>
+                </tr>
+
+                <!-- Tax row -->
+                <tr>
+                    <td>
+                        Tax
+                    </td>
+                    <!-- Dummy cell, N/A -->
+                    <td></td>
+                    <td id="tax"></td>
+                </tr>
+
+                <!-- Total row -->
+                <tr>
+                    <td>
+                        Total
+                    </td>
+                    <!-- Dummy cell, N/A -->
+                    <td></td>
+                    <td id="total"></td>
+                </tr>
             </table>
         </main>
     </body>
