@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>F&F Fox Sanctuary</title>
+        <title>Joe's Hot Dog Stand</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
@@ -9,83 +9,122 @@
     </head>
     
     <body>
-        <header>
-            <a href="index.html">
-                <img
-                    src="logo-min.png"
-                    style="display: inline"
-                />
-            </a>
-            <div>
-                <p id="title" class="mobile">F&F Fox Sanctuary</p>
-                <p id="title" class="large">Fennec and Friends Fox Sanctuary</p>
-            </div>
-        </header>
-        
-        <div class="banner" id="home">
-            <p>
-                Lend a paw to a furry friend in need
-            </p>
-        </div>
+        <script>
+            // Setup/constants
+            const PRICE_DOGS  = 4.80;
+            const PRICE_FRIES = 3.95;
+            const PRICE_SODA  = 1.99;
+            const MEALS_TAX   = 0.0625;
+
+            /**
+             * Converts an amount (float) to a string containing the amount
+             * rounded to exactly two decimal places.
+             */
+             const showMoney = (amount) => {
+                // Round to the nearest cent
+                amount = Math.round(amount * 100) / 100;
+
+                // Check if integer or decimal
+                asString = amount + "";
+                decimalIndex = asString.indexOf(".");
+
+                if(decimalIndex === -1)
+                    return asString + ".00";
+                return (asString + "00").slice(0, decimalIndex + 3)
+            }
+
+            // User input
+            const numDogs  = parseInt(prompt("Enter number of hot dogs: "));
+            const numFries = parseInt(prompt("Enter number of french fries: "));
+            const numSoda  = parseInt(prompt("Enter number of sodas: "));
+
+            // Calculation
+            const totalDogs  = PRICE_DOGS  * numDogs;
+            const totalFries = PRICE_FRIES * numFries;
+            const totalSoda  = PRICE_SODA  * numSoda;
+            const subtotal   = totalDogs + totalFries + totalSoda;
+
+            // Discount is signed
+            const discount = (subtotal >= 25) ? subtotal * -0.1 : 0;
+            const subtotalAfterDiscount = subtotal + discount;
+
+            const tax   = subtotal * MEALS_TAX;
+            const total = subtotal + tax;
+        </script>
 
         <main>
-            <h1>Home</h1>
-            <p id="subtitle">is where the fox is</p>
+            <h1>Joe's Hot Dog Stand</h1>
+            <table>
+                <!-- Header row -->
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity ordered</th>
+                    <th>Item cost (total)</th>
+                </tr>
+                
+                <!-- Item rows -->
+                <tr>
+                    <td>
+                        Hot dogs
+                    </td>
+                    <script>
+                        document.write("<td>" + numDogs + "</td>"
+                                     + "<td>" + showMoney(totalDogs) + "</td>");
+                    </script>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Fries
+                    </td>
+                    <script>
+                        document.write("<td>" + numFries + "</td>"
+                                     + "<td>" + showMoney(totalFries) + "</td>");
+                    </script>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Soda
+                    </td>
+                    <script>
+                        document.write("<td>" + numSoda + "</td>"
+                                     + "<td>" + showMoney(totalSoda) + "</td>");
+                    </script>
+                </tr>
 
-            <div style="overflow: auto">
-                <h2>Who are we?</h2>
-                <img
-                    src="fox-sleep-min.jpg"
-                    width="40%"
-                    style="float: left; margin: 1rem;"
-                />
-                <p>
-                    Fennec and Friends Fox Sanctuary is a dedicated haven for fennec
-                    foxes and other fox species in need of rescue, rehabilitation,
-                    and care. Our mission is to provide a safe, nurturing
-                    environment where these extraordinary creatures can thrive,
-                    while promoting education about their natural habitats,
-                    behaviors, and the challenges they face in the wild. Through our
-                    conservation efforts, we aim to raise awareness about the
-                    importance of protecting foxes and their ecosystems, fostering a
-                    deeper connection between humans and wildlife. At Fennec and
-                    Friends, we believe in giving foxes the second chance they
-                    deserve.
-                </p>
-            </div>
+                <!-- Subtotal row -->
+                <tr>
+                    <td>
+                        Subtotal
+                    </td>
+                    <!-- Dummy cell, N/A -->
+                    <td></td>
+                    <script>
+                        document.write("<td>" + showMoney(subtotal) + "</td>");
+                    </script>
+                </tr>
 
-            <div style="overflow: auto">
-                <h2>What is our story?</h2>
-                <img
-                    src="fennec-sleep-min.jpg"
-                    width="40%"
-                    style="float: right; margin: 1rem;"
-                />
-                <p>
-                    The story of Fennec and Friends Fox Sanctuary began with one
-                    woman's deep passion for wildlife and a profound love for foxes,
-                    particularly the adorable fennec fox. Roxanne Dunham's small
-                    effort to rescue and care for injured and displaced foxes slowly
-                    but surely grew into a full-fledged sanctuary. After witnessing
-                    firsthand the threats these animals face—from habitat loss to
-                    the fur farming—we knew we had to do more. With a team of
-                    like-minded individuals, we built a safe haven where foxes could
-                    recover and live peacefully. Now, our sanctuary is a place not
-                    only of healing for foxes but also of education and
-                    conservation, spreading the message of protection for these
-                    remarkable creatures.
-                </p>
-            </div>
+                <!-- Discount row, new subtotal row (if applicable) -->
+                <script>
+                    if(discount !== 0) {
+                        document.write(
+                            `
+                            <tr>
+                                <td>Discount</td>
+                                <td></td>
+                                <td>${showMoney(discount)}</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal after discount</td>
+                                <td></td>
+                                <td>${showMoney(subtotalAfterDiscount)}</td>
+                            </tr>
+                            `
+                        )
+                    }
+                </script>
+            </table>
         </main>
-
-        <footer>
-            <nav style="width: 100%; height: 100%;">
-                <div id="footer-list">
-                    <a href="#">Home</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="give.html">Give</a>
-                </div>
-            </nav>
-        </footer>
     </body>
 </html>
