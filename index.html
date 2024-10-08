@@ -37,13 +37,16 @@
             let totalDogs, totalFries, totalSoda;
             let subtotal, discount, subtotalAfterDiscount, tax, total;
             /**
-             * Gets the user's order and updates state.
+             * Gets the user's order and updates receipt.
              */
             const getOrder = () => {
                 // User input
                 numDogs  = parseInt(prompt("Enter number of hot dogs: "));
                 numFries = parseInt(prompt("Enter number of french fries: "));
                 numSoda  = parseInt(prompt("Enter number of sodas: "));
+
+                if(isNaN(numDogs) || isNaN(numFries) || isNaN(numSoda))
+                    return;
 
                 // Calculation
                 totalDogs  = PRICE_DOGS  * numDogs;
@@ -57,6 +60,8 @@
 
                 tax   = subtotalAfterDiscount * MEALS_TAX;
                 total = subtotalAfterDiscount + tax;
+
+                updateReceipt();
             }
 
             /**
@@ -76,98 +81,118 @@
                 getElement("discount").innerHTML = showMoney(discount);
                 getElement("subtotalAfterDiscount").innerHTML =
                         showMoney(subtotalAfterDiscount);
+
+                console.log(getElement("discountRow").style.display);
+
+                // if(discount === 0) {
+                //     getElement("discountRow").style.display = "none";
+                //     getElement("subtotalAfterDiscountRow").style.display
+                //             = "none";
+                // } else {
+                //     getElement("discountRow").style.display = "block";
+                //     getElement("subtotalAfterDiscountRow").style.display
+                //             = "block";
+                // }
+
                 getElement("tax").innerHTML = showMoney(tax);
                 getElement("total").innerHTML = showMoney(total);
+
+                // Unhide the receipt
+                getElement("receipt").style.display = "block";
             }
         </script>
 
         <main>
             <h1>Joe's Hot Dog Stand</h1>
 
-            <button type="button" onclick="getOrder(); updateReceipt();">Order</button>
+            <h2>Menu</h2>
+            <div id="menu">
+                <div class="item-frame">
+                    <img src="hot dog.jpg" />
+                    <p class="caption">Hot dog</p>
+                    <p class="price">$4.80</p>
+                </div>
+                <div class="item-frame">
+                    <img src="french fries.jpg" />
+                    <p class="caption">French fries</p>
+                    <p class="price">$3.95</p>
+                </div>
+                <div class="item-frame">
+                    <img src="soda.jpg" />
+                    <p class="caption">Soda</p>
+                    <p class="price">$1.99</p>
+                </div>
+            </div>
 
-            <h2>Receipt</h2>
-            <table>
-                <!-- Header row -->
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity ordered</th>
-                    <th>Item cost (total)</th>
-                </tr>
-                
-                <!-- Item rows -->
-                <tr>
-                    <td>
-                        Hot dogs
-                    </td>
-                    <td id="numDogs"></td>
-                    <td id="totalDogs"></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        Fries
-                    </td>
-                    <td id="numFries"></td>
-                    <td id="totalFries"></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        Soda
-                    </td>
-                    <td id="numSoda"></td>
-                    <td id="totalSoda"></td>
-                </tr>
+            <br />
 
-                <!-- Subtotal row -->
-                <tr>
-                    <td>
-                        Subtotal
-                    </td>
-                    <!-- Dummy cell, N/A -->
-                    <td></td>
-                    <td id="subtotal"></td>
-                </tr>
+            <div id="orderButton" onclick="getOrder();">
+                Order
+            </div>
 
-                <!-- Discount row, new subtotal row -->
-                <tr>
-                    <td>
-                        Discount
-                    </td>
-                    <!-- Dummy cell, N/A -->
-                    <td></td>
-                    <td id="discount"></td>
-                </tr>
-                <tr>
-                    <td>
-                        Subtotal after discount
-                    </td>
-                    <!-- Dummy cell, N/A -->
-                    <td></td>
-                    <td id="subtotalAfterDiscount"></td>
-                </tr>
+            <div id="receipt" style="display: none;">
+                <h2>Receipt</h2>
+                <table>
+                    <!-- Header row -->
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity ordered</th>
+                        <th>Item cost (total)</th>
+                    </tr>
+                    
+                    <!-- Item rows -->
+                    <tr>
+                        <td>Hot dogs</td>
+                        <td id="numDogs"></td>
+                        <td id="totalDogs"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Fries</td>
+                        <td id="numFries"></td>
+                        <td id="totalFries"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Soda</td>
+                        <td id="numSoda"></td>
+                        <td id="totalSoda"></td>
+                    </tr>
 
-                <!-- Tax row -->
-                <tr>
-                    <td>
-                        Tax
-                    </td>
-                    <!-- Dummy cell, N/A -->
-                    <td></td>
-                    <td id="tax"></td>
-                </tr>
+                    <!-- Subtotal row -->
+                    <tr>
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td id="subtotal"></td>
+                    </tr>
 
-                <!-- Total row -->
-                <tr>
-                    <td>
-                        Total
-                    </td>
-                    <!-- Dummy cell, N/A -->
-                    <td></td>
-                    <td id="total"></td>
-                </tr>
-            </table>
+                    <!-- Discount row, new subtotal row -->
+                    <tr id="discountRow">
+                        <td>Discount</td>
+                        <td></td>
+                        <td id="discount"></td>
+                    </tr>
+                    <tr id="subtotalAfterDiscountRow">
+                        <td>Subtotal after discount</td>
+                        <td></td>
+                        <td id="subtotalAfterDiscount"></td>
+                    </tr>
+
+                    <!-- Tax row -->
+                    <tr>
+                        <td>Tax</td>
+                        <td></td>
+                        <td id="tax"></td>
+                    </tr>
+
+                    <!-- Total row -->
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td id="total"></td>
+                    </tr>
+                </table>
+            </div>
         </main>
     </body>
 </html>

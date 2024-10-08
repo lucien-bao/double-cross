@@ -4,15 +4,78 @@ body {
     font-family: Ubuntu, Helvetica, Arial, sans-serif;
     height: 100%;
     
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 @media (width > 600px) {
     body {
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 15%;
+        margin-right: 15%;
     }
+}
+
+#menu {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+@media (width > 600px) {
+    #menu {
+        flex-direction: row;
+    }
+}
+
+.item-frame {
+    display: inline-block;
+    border-radius: 10px;
+    border: solid #e98c00;
+    border-width: 2px;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+}
+
+@media (width > 600px) {
+    .item-frame {
+        width: 33%;
+    }
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    border-radius: 8px;
+}
+
+.caption {
+    font-weight: bolder;
+    font-size: larger;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.price {
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+#orderButton {
+    cursor: pointer;
+    color: #000000;
+    background-color: #ffbe5e;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: larger;
+    border-radius: 0.7rem;
+    display: inline-block;
+}
+
+#orderButton:hover {
+    background-color: #e98c00;
 }
 
 table {
