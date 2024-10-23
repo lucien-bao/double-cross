@@ -6,6 +6,72 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+
+        <style type ="text/css">
+            .banner {
+                background-color: #ff0000;
+                height: 465px;
+                background-position: center top;
+                padding-top: 10px;
+            }
+
+            .banner #home-cta {
+                font-size: 70px;
+                padding: 30px 30px;
+                text-align: center;
+                width: 625px;
+                color: #D0894B;
+                background-color: #ffffff;
+                margin-left: 60px;
+                margin-top: 185px;
+                margin-bottom: 0px;
+            }
+
+            .banner #home-banner-btn {
+                background-color: #2B4753;
+                text-align: center;
+                width: 280px;
+                font-size: 30px;
+                color: #ffffff;
+                border-radius: 30px;
+                padding: 12px 0px;
+                margin-top: 20px;
+                margin-left: 265px;
+            }
+
+            .banner a {
+                text-decoration: none;
+            }
+
+            .banner #home-banner-btn:hover {
+                color: #D9B45D;
+                background-color: #253542;
+            }
+
+
+            h2 {
+                font-size: 35px;
+                text-align: center;
+            }
+
+            main .image {
+                background-color: #ff0000;
+                margin: 50px 0px 0px 40px;
+                width: 400px;
+                height: 250px;
+                display: inline-block;
+                border-radius: 30px;
+            }
+
+            main #content {
+                float: right;
+                max-width: 900px;
+                margin: 20px 60px 0px 0px;
+                padding: 0px 30px;
+                font-size: 26px;
+            }
+
+        </style>
     </head>
     
     <body>
@@ -23,21 +89,23 @@
         </header>
 
         <div class="banner" id="banner-home">
-            <p id="home-cta">Rent a penguin now!</p>
+            <h1 id="home-cta">Rent a penguin now!</h1>
             <a href="ordering.html">
                 <div id="home-banner-btn">
-                    Order
+                    Ordering
                 </div>
             </a>
         </div>
 
         <main>
             <div class="main-series">
-                <img src="FILL ME"/>
-                <div>
-                    <p class="section-heading">
+                <div class="image">
+                    <img src="FILL ME"/>
+                </div>
+                <div id="content">
+                    <h2 class="section-heading">
                         Your chill companions on demand
-                    </p>
+                    </h2>
                     <p>
                         Ever dreamed of hanging out with a penguin? At The Penguin Company, we make that dream a
                         reality! We provide a unique experience where you can rent adorable penguins for a fun-filled
@@ -66,13 +134,15 @@
 
         <footer>
             <nav id="footer-nav">
-                <ul>
+                <ul id="top-row">
                     <a href="index.html"><li>Home</li></a>
                     <a href="about.html"><li>About Us</li></a>
                     <a href="services.html"><li>Services</li></a>
                     <a href="ordering.html"><li>Ordering</li></a>
+                </ul>
+                <ul id="bottom-row">
                     <a href="penguins.html"><li>About Penguins</li></a>
-                    <a href="safety.html"><li>Penguin Safety</li></a>
+                    <a href="safety.html"><li>Penguin Safety Instructions</li></a>
                     <a href="contact.html"><li>Contact Us</li></a>
                 </ul>
             </nav>
