@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Penguin Company</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="favicon.png" />
+    </head>
+    
+    <body>
+        <header>
+            <a href="index.html"><img src="logo.png" id="nav-logo"/></a>
+            
+            <nav id="nav">
+                <ul>
+                    <a href="about.html"><li>About Us</li></a>
+                    <a href="services.html"><li>Services</li></a>
+                    <a href="ordering.html"><li>Ordering</li></a>
+                    <a href="contact.html"><li>Contact Us</li></a>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="banner" id="banner-home">
+            <h1 id="home-cta">Rent a penguin now!</h1>
+            <a href="ordering.html">
+                <div id="home-banner-btn">
+                    Ordering
+                </div>
+            </a>
+        </div>
+
+        <main>
+            <h1>Ordering</h1>
+            <form id="order">
+                <label>
+                    First name
+                    <input type="text" name="fname" id="fname-input"/>
+                </label>
+                <label>
+                    Last name
+                    <input type="text" name="lname" id="lname-input"/>
+                </label>
+                <label>
+                    Phone number
+                    <input type="text" name="phone" id="phone-input"/>
+                </label>
+                <label>
+                    Email address
+                    <input type="email" name="email" id="email-input"/>
+                </label>
+                <label>
+                    Rental date
+                    <input type="date" name="date" id="date-input"/>
+                </label>
+                <label>
+                    Rental time
+                    <input type="time" name="time" id="time-input"/>
+                </label>
+                <label>
+                    Desired package
+                    <select name="pkg" id="pkg-sel">
+                        <option value="">Choose a package</option>
+                        <option value="playdate">Penguin playdate</option>
+                        <option value="party">Party with penguins</option>
+                        <option value="adventure">Penguin adventure day</option>
+                        <option value="corporate">Corporate penguin chill</option>
+                        <option value="photo">Penguin photo experience</option>
+                    </select>
+                </label>
+                <label>
+                    Address
+                    <textarea name="address" id="address-area" rows="4" cols="30"></textarea>
+                </label>
+                <label>
+                    Special instructions
+                    <textarea name="instr" id="instr-area" rows="4" cols="30"></textarea>
+                </label>
+                <input type="submit" id="order-submit" value="Submit order"/>
+            </form>
+        </main>
+
+        <footer>
+            <nav id="footer-nav">
+                <ul id="top-row">
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="about.html"><li>About Us</li></a>
+                    <a href="services.html"><li>Services</li></a>
+                    <a href="ordering.html"><li>Ordering</li></a>
+                </ul>
+                <ul id="bottom-row">
+                    <a href="penguins.html"><li>About Penguins</li></a>
+                    <a href="safety.html"><li>Penguin Safety Instructions</li></a>
+                    <a href="contact.html"><li>Contact Us</li></a>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>
