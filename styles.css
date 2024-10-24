@@ -3,6 +3,7 @@
 
 body {
     margin: 0px;
+    font-family: "Ubuntu", sans-serif;
 }
 
 header {
@@ -41,6 +42,10 @@ header #nav ul a {
 
 header #nav ul a:hover {
     color: #D9B45D;
+}
+
+header #nav li {
+    font-weight: bolder;
 }
 
 footer {
