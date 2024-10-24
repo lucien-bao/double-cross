@@ -80,3 +80,6 @@ footer #footer-nav ul a:hover {
     color: #D9B45D;
 }
 
+#footer-nav li {
+    font-weight: bolder;
+}
