@@ -32,7 +32,7 @@ header #nav {
 header #nav ul {
     list-style-type: none;
     padding: 0px;
-    margin-left: -60px;
+    margin-left: -40px;
 
 }
 
@@ -58,6 +58,7 @@ h1 {
     text-align: center;
     color: #D0894B;
     font-family: "Red Hat Display";
+    padding: 0px 30px
 }
 
 footer {
@@ -96,6 +97,13 @@ footer #footer-nav ul a:hover {
     font-weight: bolder;
 }
 
+.main-series img {
+    background-color: #ff0000;
+    width: 400px;
+    border-radius: 30px;
+    margin: 25px 50px;
+}
+
 .image {
     background-color: #ff0000;
     width: 400px;
@@ -103,7 +111,24 @@ footer #footer-nav ul a:hover {
     border-radius: 30px;
 }
 
-@media (max-width:1370px) {
+.main-series p {
+    line-height: 1.5;
+    width: 90%;
+    font-size: 25px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 40px 40px 20px 40px;
+}
+
+.main-series {
+    margin-bottom: 40px;
+}
+
+@media (max-width:1380px) {
     header #nav ul a {
         margin: 0px 35px;
         font-size: 25px;
@@ -165,6 +190,10 @@ footer #footer-nav ul a:hover {
 }
 
 @media (max-width:670px) {
+    h1 {
+        font-size: 50px;
+    }
+
     footer #footer-nav ul a {
         display: block;
     }
