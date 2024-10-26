@@ -6,6 +6,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+
+        <style>
+
+            .main-series .mobile {
+                display: none;
+            }
+
+            .main-series #image-column-mobile{
+                    display: none;
+            }
+
+            #image-column {
+                float: left;
+                margin-top: -30px;
+            }
+
+            #image-column img {
+                display: block;
+                margin: 50px;
+            }
+
+            .main-series ul {
+                margin: 0px 50px;
+                font-size: 25px;
+                line-height: 1.5;
+            }
+
+            @media (max-width:900px) {
+
+                .main-series ul {
+                    margin: 25px;
+                }
+
+                h1{
+                    margin-bottom: -20px;
+                }
+
+                .main-series .full-screen {
+                    display: none;
+                }
+
+                .main-series .mobile {
+                    display: block;
+                    margin: auto;
+                }
+
+                .main-series #image-column-mobile{
+                    display: block;
+                    width: fit-content;
+                    margin: auto;
+                }
+
+                .main-series #image-column-mobile img{
+                    display: inline-block;
+                    width: 300px;
+                    margin: 0px 20px 20px 20px;
+                }
+            }
+
+            @media (max-width:700px) {
+                .main-series #image-column-mobile img {
+                display: inline-block;
+                width: 200px;
+                }
+            }
+
+            @media (max-width:500px) {
+                .main-series #image-column-mobile img {
+                display: block;
+                }
+            }
+
+        </style>
     </head>
     
     <body>
@@ -28,17 +101,25 @@
             </h1>
 
             <div class="main-series">
-                <p>
+                <img src="Images/About Penguins Page/Penguin Pair Small.jpg" id="FILL ME" class="full-screen" style="float: right;"/>
+                <p style="padding-top: 50px;">
                     Penguins are flightless seabirds known for their distinctive black-and-white coloring and upright
                     waddle. Penguins are expert swimmers, using their wings like flippers to navigate through oceans in
                     search of fish, krill, and other marine life. They thrive in some of the world's harshest
                     environments, but those environments are now under threat.
                 </p>
-                <img src="Images/About Penguins Page/Penguin Pair Small.jpg" id="FILL ME" />
+
+                <img src="Images/About Penguins Page/Penguin Pair Small.jpg" id="FILL ME" class="mobile"/>
             </div>
 
             <div class="main-series">
-                <h2 class="section-heading">Penguin conservation</h2>
+
+                <div class="full-screen" id="image-column">
+                    <img src="Images/About Penguins Page/Pollution Penguin Sad Small.jpg" id="FILL ME" />
+                    <img src="Images/About Penguins Page/Penguin Colony Small.jpg" id="FILL ME" />
+                </div>
+
+                <h2 class="section-heading" style="margin-top: 75px;">Penguin conservation</h2>
                 <p>
                     Penguins face numerous threats to their survival, with climate change, overfishing, and habitat
                     destruction among the most significant challenges. Melting sea ice in Antarctica reduces hunting
@@ -56,12 +137,21 @@
                     research also plays a vital role in understanding how penguins adapt to environmental changes, which
                     is essential for creating effective long-term conservation strategies.
                 </p>
-                <img src="Images/About Penguins Page/Pollution Penguin Sad Small.jpg" id="FILL ME" />
-                <img src="Images/About Penguins Page/Penguin Colony Small.jpg" id="FILL ME" />
+
+                <div id="image-column-mobile">
+                    <img src="Images/About Penguins Page/Pollution Penguin Sad Small.jpg" id="FILL ME" />
+                    <img src="Images/About Penguins Page/Penguin Colony Small.jpg" id="FILL ME" />
+                </div>
+
+            
             </div>
 
             <div class="main-series">
+
                 <h2 class="section-heading">Penguin fun facts</h2>
+
+                <img src="Images/About Penguins Page/Swimming Penguin Small.jpg" id="FILL ME" class="full-screen" style="float: right;"/>
+
                 <ul>
                     <li>
                         Penguins are incredibly agile in water, reaching speeds of up to 15 miles per hour when swimming.
@@ -84,17 +174,20 @@
                         species like the African penguin and Galápagos penguin live in much warmer areas.
                     </li>
                 </ul>
-                <img src="Images/About Penguins Page/Swimming Penguin Small.jpg" id="FILL ME" />
+
+                <img src="Images/About Penguins Page/Swimming Penguin Small.jpg" id="FILL ME" class="mobile"/>
             </div>
         </main>
 
         <footer>
             <nav id="footer-nav">
-                <ul>
+                <ul id="top-row">
                     <a href="index.html"><li>Home</li></a>
                     <a href="about.html"><li>About Us</li></a>
                     <a href="services.html"><li>Services</li></a>
                     <a href="ordering.html"><li>Ordering</li></a>
+                </ul>
+                <ul id="bottom-row">
                     <a href="penguins.html"><li>About Penguins</li></a>
                     <a href="safety.html"><li>Penguin Safety</li></a>
                     <a href="contact.html"><li>Contact Us</li></a>
