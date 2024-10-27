@@ -141,7 +141,7 @@ h2 {
     }
 }
 
-@media (max-width:1000px) {
+@media (max-width:1010px) {
     header #nav ul a {
         margin: 0px 25px;
     }
