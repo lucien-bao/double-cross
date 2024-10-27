@@ -27,12 +27,13 @@
             .contact-info {
                 text-align: left;
                 margin-bottom: 30px;
+                margin-left: 10%;
                 font-weight: bold;
             }
 
             form{
                 text-align: left;
-                margin-left: 5%;
+                margin-left: 10%;
             }
 
             form label{
@@ -48,7 +49,7 @@
                 display: inline-block;
                 margin: 0 auto 0 auto;
                 margin-left: 20px;
-                width: 30%;
+                width: 70%;
                 height: 40px;
                 padding: 5px;
                 font-size: 20px;
@@ -58,7 +59,7 @@
             form label textarea{
                 display: block;
                 margin-top: 20px;
-                width: 50%;
+                width: 90%;
                 height: 400px;
                 padding: 5px;
                 font-size: 15px;
@@ -79,9 +80,11 @@
 
             }
 
-            @media (max-width:900px) {
-                #image-column {
-                    display: none;
+            @media (max-width:1005px) {
+                form label input {
+                    display: block;
+                    margin-left: 0;
+                    margin-top: 20px;
                 }
 
                 #image-column-mobile {
@@ -141,7 +144,7 @@
             <p class="contact-info">Send us a message!</p>
             <form id = "contactMessage" onsubmit = "submissionAlert()">
                 <label>
-                    Your email
+                    Your email address
                     <input type="email" name="email" id="email-input"/>
                 </label>
                 <label>
