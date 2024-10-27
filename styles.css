@@ -98,17 +98,9 @@ footer #footer-nav ul a:hover {
 }
 
 .main-series img {
-    background-color: #ff0000;
     width: 400px;
     border-radius: 30px;
     margin: 25px 50px;
-}
-
-.image {
-    background-color: #ff0000;
-    width: 400px;
-    height: 250px;
-    border-radius: 30px;
 }
 
 .main-series p {
