@@ -36,7 +36,7 @@
                 display: flex;
                 width: 90%;
                 margin: auto;
-                margin-bottom: 5px;
+                margin-bottom: 40px;
             }
 
             #menu img{
@@ -49,8 +49,8 @@
             }
 
             .package {
-                padding: 30px;
-                height: auto;
+                padding: 0px 30px;
+                min-height: 700px;
             }
 
             .package-name {
@@ -81,10 +81,15 @@
                 .package-desc-list {
                     font-size: 19px;
                 }
+
+                .package {
+                    min-height: 640px;
+                }
             }
 
             @media (max-width:1000px) {
                 .package { 
+                    min-height: 0px;
                     height: auto;
                     padding: 5px 30px;
                 }
