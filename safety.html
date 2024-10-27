@@ -6,6 +6,64 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+
+        <style>
+
+            .main-series-two-column {
+                font-size: 25px;
+                line-height: 1.5;
+                display: flex;
+                margin: 20px;
+            }
+
+            .main-series img {
+                float: right;
+                margin: 0px 50px;
+                width: 350px;
+            }
+
+            h3 {
+                margin: 0;
+            }
+
+            .column {
+                margin: 20px 20px 0px 20px;
+            }
+
+            @media (max-width:800px) {
+
+                .main-series-two-column {
+                    display: block;
+                }
+
+                .column {
+                    margin: 20px;
+                }
+
+                .main-series img {
+                    float: right;
+                    margin: 10px 50px;
+                    width: 30%;
+                }
+            }
+
+            @media (max-width:800px) {
+                h2 {
+                    text-align: center;
+                }
+
+                .main-series img {
+                    float: none;
+                    display: block;
+                    width: 30%;
+                    margin: auto;
+                }
+
+            }
+
+        
+
+        </style>
     </head>
     
     <body>
@@ -28,6 +86,7 @@
             </h1>
 
             <div class="main-series">
+                <img src="Images/Penguin Safety/Penguin Handler Small.jpg"/>
                 <h2 class="section-heading">Introduction to penguin safety</h2>
                 <p>
                     Penguins are fascinating and friendly animals, but it's important to approach them with care and
@@ -36,13 +95,12 @@
                     interaction, and their unique needs must be considered during every encounter. Following safety
                     guidelines will ensure that both you and the penguins have a fun, stress-free experience.
                 </p>
-                <div class="image">
-                    <img src="Images/Penguin Safety/Penguin Handler Small.jpg"/>
-                </div>
             </div>
 
-            <div class="main-series two-column">
-                <h2 class="section-heading">Penguin handling dos and don'ts</h2>
+            <h2 class="section-heading">Penguin handling dos and don'ts</h2>
+
+            <div class="main-series-two-column">
+            <div class="column">
                 <h3 class="section-subheading">Dos</h3>
                 <ul>
                     <li>
@@ -65,7 +123,9 @@
                         spreading germs.
                     </li>
                 </ul>
-                
+            </div>
+            
+            <div class="column">
                 <h3 class="section-heading">Don'ts</h3>
                 <ul>
                     <li>
@@ -74,7 +134,7 @@
                     <li>
                         <strong>Don't make loud noises or sudden actions</strong> that could scare the penguin.
                     </li>
-                    <li> 
+                    <li>
                         <strong>Don't chase or try to pick up a penguin</strong> without the handler's permission.
                     </li>
                     <li>
@@ -87,15 +147,18 @@
                     </li>
                 </ul>
             </div>
+            </div>
         </main>
 
         <footer>
             <nav id="footer-nav">
-                <ul>
+                <ul id="top-row">
                     <a href="index.html"><li>Home</li></a>
                     <a href="about.html"><li>About Us</li></a>
                     <a href="services.html"><li>Services</li></a>
                     <a href="ordering.html"><li>Ordering</li></a>
+                </ul>
+                <ul id="bottom-row">
                     <a href="penguins.html"><li>About Penguins</li></a>
                     <a href="safety.html"><li>Penguin Safety</li></a>
                     <a href="contact.html"><li>Contact Us</li></a>
