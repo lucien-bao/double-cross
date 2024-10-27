@@ -6,6 +6,119 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+
+        <style>
+            h1{
+                text-align: center;
+            }
+
+            p {
+                width: 90%;
+                font-size: 25px;
+                margin: auto;
+                line-height: 1.5;
+            }
+
+            h2 {
+                font-size: 40px;
+                margin: 40px 40px 20px 40px;
+            }
+
+            .contact-info {
+                text-align: left;
+                margin-bottom: 30px;
+                font-weight: bold;
+            }
+
+            form{
+                text-align: left;
+                margin-left: 5%;
+            }
+
+            form label{
+                width: 90%;
+                font-size: 25px;
+                margin-bottom: 20px;
+                width: 100%;
+                font-weight: bold;
+                display: block;
+            }
+
+            form label input{
+                display: inline-block;
+                margin: 0 auto 0 auto;
+                margin-left: 20px;
+                width: 30%;
+                height: 40px;
+                padding: 5px;
+                font-size: 20px;
+                font-family: "Ubuntu", sans-serif;
+            }
+
+            form label textarea{
+                display: block;
+                margin-top: 20px;
+                width: 50%;
+                height: 400px;
+                padding: 5px;
+                font-size: 15px;
+                font-family: "Ubuntu", sans-serif;
+            }
+
+            input[type=submit] {
+                background-color: #2B4753;
+                text-align: center;
+                width: 280px;
+                font-size: 30px;
+                color: #ffffff;
+                border-radius: 30px;
+                padding: 12px 0px;
+                margin: 0 auto 0 auto;
+                margin-bottom: 20px;
+                font-family: "Ubuntu", sans-serif;
+
+            }
+
+            @media (max-width:900px) {
+                #image-column {
+                    display: none;
+                }
+
+                #image-column-mobile {
+                    display: block
+                }
+                .main-series img {
+                display: inline-block;
+                width: 300px;
+                margin: 0px 20px 20px 20px;
+                }
+                .main-series {
+                    margin-bottom: 0px;
+                }
+            }   
+
+            @media (max-width:700px) {
+                .main-series img {
+                display: inline-block;
+                width: 200px;
+                margin: 20px;
+                }
+            }
+
+            @media (max-width:500px) {
+                .main-series img {
+                display: block;
+                }
+            }
+
+        </style>
+
+        <script>
+            function submissionAlert()
+            {
+                alert("Your message has been submitted! You should receive a response within 3 - 5 business days");
+            }
+        </script>
     </head>
     
     <body>
@@ -21,21 +134,26 @@
                 </ul>
             </nav>
         </header>
-
-        <div class="banner" id="banner-home">
-            <h1 id="home-cta">Rent a penguin now!</h1>
-            <a href="ordering.html">
-                <div id="home-banner-btn">
-                    Ordering
-                </div>
-            </a>
-        </div>
-
         <main>
-            <h1>Contact</h1>
-            <p class="subheading">Get in touch with us</p>
+            <h1>Contact Us</h1>
             <p class="contact-info">Email: <a href="mailto:contact@thepenguin.co">contact@thepenguin.co</a></p>
             <p class="contact-info">Phone: <a href="tel:555-PENGUIN">555-PENGUIN</a></p>
+            <p class="contact-info">Send us a message!</p>
+            <form id = "contactMessage" onsubmit = "submissionAlert()">
+                <label>
+                    Your email
+                    <input type="email" name="email" id="email-input"/>
+                </label>
+                <label>
+                    Your message to us
+                    <textarea name="msg" id="msg-area" rows="4" cols="30"></textarea>
+                </label>
+                
+                <div id="home-banner-btn">
+                    <input type="submit" id="order-submit" value="Submit Message"/>
+                </div>
+            </form>
+            
         </main>
 
         <footer>
