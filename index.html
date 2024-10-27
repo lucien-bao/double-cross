@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <style type ="text/css">
             .banner {
@@ -114,9 +115,26 @@
             }
 
         </style>
+
+        <script>
+
+            $(document).ready (function()
+            {   
+                $("#home-cta").hide();
+                $("#home-banner-btn").hide();
+                $("#home-cta").fadeIn(1000);
+                $("#home-banner-btn").fadeIn(1000);
+            })
+
+        </script>
+
     </head>
     
     <body>
+
+    
+
+
         <header>
             <a href="index.html"><img src="logo.png" id="nav-logo"/></a>
             
@@ -157,7 +175,7 @@
                     </p>
             </div>
 
-            <div class="main-series">
+            <div class="main-series" style="margin-bottom: 100px;">
                 <img src="Images/Home Page/Penguin March Small.jpg"/>
                 <div>
                     <p class="section-heading">
