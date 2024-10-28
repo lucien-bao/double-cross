@@ -212,7 +212,7 @@ h2 {
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:615px) {
     header #nav ul li {
         display: block;
         margin: 10px;
