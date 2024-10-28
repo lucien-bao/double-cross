@@ -114,6 +114,12 @@
             }
 
         </style>
+        <script>
+            function submissionAlert()
+            {
+                alert("Your request for rental has been received! Please check your email for a receipt.");
+            }
+        </script>
     </head>
     
     <body>
@@ -133,7 +139,7 @@
 
         <main>
             <h1>Ordering</h1>
-            <form id="order">
+            <form id="order" onsubmit = "submissionAlert()">
                 <h2 class="form-section">Contact information</h2>
                 <label>
                     First name<span class="accent-text">*</span>
