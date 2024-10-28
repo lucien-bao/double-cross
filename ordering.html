@@ -63,9 +63,12 @@
                     Rental date<span class="accent-text">*</span>
                     <input type="date" name="date" id="date-input" required/>
                 </label>
+                <p class="info">Rentals must be placed at least 24 hours in advance.</p>
                 <label>
                     Rental time<span class="accent-text">*</span>
-                    <input type="time" name="time" id="time-input" required/>
+                    <input type="time" name="time" id="time-input" min="09:00"
+                           max="17:00" step="900" required/>
+                    <!-- step 900 means increments of 15 mins -->
                 </label>
                 <label>
                     Desired package<span class="accent-text">*</span>
@@ -116,5 +119,40 @@
                 </ul>
             </nav>
         </footer>
+
+        <script>
+            const validate = (event) => {
+                const form = new FormData(document.getElementById("order"));
+                const phone = form.get("phone");
+                const zip = form.get("zip");
+                const date = new Date(form.get("date"));
+                const currentDate = Date.now();
+                
+                const phonePattern = /^\(?[0-9]{3}\)?[ \-]?[0-9]{3}[ \-]?[0-9]{4}$/;
+                if(!phonePattern.test(phone)) {
+                    alert("Please provide a valid phone number.");
+                    event.preventDefault();
+                    return;
+                }
+
+                const zipPattern = /^\d{5}(?:[-\s]\d{4})?$/;
+                if(!zipPattern.test(zip)) {
+                    alert("Please provide a valid zip code.");
+                    event.preventDefault();
+                    return;
+                }
+
+                if(Math.floor((date - currentDate) / 1000 / 60 / 60 / 24) < 1) {
+                    alert("Please provide a valid date.");
+                    event.preventDefault();
+                    return;
+                }
+            };
+
+            window.addEventListener("load", () => {
+                const form = document.getElementById("order");
+                form.addEventListener("submit", validate);
+            });
+        </script>
     </body>
 </html>
