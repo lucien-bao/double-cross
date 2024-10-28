@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="favicon.png" />
+
+        <style>
+            .accent-text {
+                color: #ff0000;
+            }
+        </style>
     </head>
     
     <body>
@@ -34,33 +40,36 @@
         <main>
             <h1>Ordering</h1>
             <form id="order">
+                <h2 class="form-section">Contact information</h2>
                 <label>
-                    First name
-                    <input type="text" name="fname" id="fname-input"/>
+                    First name<span class="accent-text">*</span>
+                    <input type="text" name="fname" id="fname-input" required/>
                 </label>
                 <label>
-                    Last name
-                    <input type="text" name="lname" id="lname-input"/>
+                    Last name<span class="accent-text">*</span>
+                    <input type="text" name="lname" id="lname-input" required/>
                 </label>
                 <label>
-                    Phone number
-                    <input type="text" name="phone" id="phone-input"/>
+                    Phone number<span class="accent-text">*</span>
+                    <input type="tel" name="phone" id="phone-input" required/>
                 </label>
                 <label>
-                    Email address
-                    <input type="email" name="email" id="email-input"/>
+                    Email address<span class="accent-text">*</span>
+                    <input type="email" name="email" id="email-input" required/>
+                </label>
+
+                <h2 class="form-section">Rental information</h2>
+                <label>
+                    Rental date<span class="accent-text">*</span>
+                    <input type="date" name="date" id="date-input" required/>
                 </label>
                 <label>
-                    Rental date
-                    <input type="date" name="date" id="date-input"/>
+                    Rental time<span class="accent-text">*</span>
+                    <input type="time" name="time" id="time-input" required/>
                 </label>
                 <label>
-                    Rental time
-                    <input type="time" name="time" id="time-input"/>
-                </label>
-                <label>
-                    Desired package
-                    <select name="pkg" id="pkg-sel">
+                    Desired package<span class="accent-text">*</span>
+                    <select name="pkg" id="pkg-sel" required>
                         <option value="">Choose a package</option>
                         <option value="playdate">Penguin playdate</option>
                         <option value="party">Party with penguins</option>
@@ -70,11 +79,22 @@
                     </select>
                 </label>
                 <label>
-                    Address
-                    <textarea name="address" id="address-area" rows="4" cols="30"></textarea>
+                    Address<span class="accent-text">*</span>
+                    <input type="text" name="add1" id="add1-input" required/>
+                    <input type="text" name="add2" id="add2-input"/>
+                    <input type="text" name="add3" id="add3-input"/>
                 </label>
                 <label>
-                    Special instructions
+                    State<span class="accent-text">*</span>
+                    <input type="text" name="state" id="state-input" required/>
+                </label>
+                <label>
+                    Zip code<span class="accent-text">*</span>
+                    <input type="text" name="zip" id="zip-input" required />
+                </label>
+                <p class="info">The Penguin Company provides services in the continental United States only.</p>
+                <label>
+                    Special instructions (optional)
                     <textarea name="instr" id="instr-area" rows="4" cols="30"></textarea>
                 </label>
                 <input type="submit" id="order-submit" value="Submit order"/>
