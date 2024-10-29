@@ -10,23 +10,23 @@ header {
     background-color: #2B4753;
     top: 0px;
     width: 100%;
-    height: 150px;
+    height: 110px;
     position: fixed;
     margin-inline-start: 0px;
 }
 
 header #nav-logo {
     display: inline-block;
-    width: 120px;
-    margin: 15px 80px 5px;
+    width: 90px;
+    margin: 10px 120px;
 }
 
 header #nav {
     display: inline-block;
-    font-size: 35px;
+    font-size: 30px;
     vertical-align: top;
     position: relative;
-    padding: 20px 0px;
+    padding: 10px 0px;
 }
 
 header #nav ul {
@@ -56,8 +56,8 @@ header #nav li {
 }
 
 h1 {
-    margin: 180px 0px 25px 0px;
-    font-size: 65px;
+    margin: 140px 0px 25px 0px;
+    font-size: 55px;
     text-align: center;
     color: #D0894B;
     font-family: "Red Hat Display";
@@ -67,7 +67,7 @@ h1 {
 footer {
     background-color: #2B4753;
     width: 100%;
-    font-size: 35px;
+    font-size: 25px;
     margin-top: 70px;
 }
 
@@ -90,11 +90,11 @@ footer #footer-nav ul a{
 }
 
 footer #footer-nav #top-row li{
-    margin: 50px 100px;
+    margin: 30px 100px 50px;
 }
 
 footer #footer-nav #bottom-row li{
-    margin: 10px 60px 60px 60px;
+    margin: 10px 60px 30px 60px;
 }
 
 footer #footer-nav ul a:hover {
@@ -114,13 +114,13 @@ footer #footer-nav ul a:hover {
 .main-series p {
     line-height: 1.5;
     width: 90%;
-    font-size: 25px;
+    font-size: 22px;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 28px;
     margin: 40px 40px 20px 40px;
 }
 
@@ -129,6 +129,10 @@ h2 {
 }
 
 @media (max-width:1380px) {
+    header #nav-logo {
+        margin: 10px 90px;
+    }
+
     header #nav ul li {
         margin: 0px 35px;
         font-size: 25px;
@@ -139,13 +143,11 @@ h2 {
     }
 
     footer #footer-nav #top-row li{
-        font-size: 25px;
-        margin: 50px 60px;
+        margin: 30px 60px;
     }
     
     footer #footer-nav #bottom-row li{
-        font-size: 25px;
-        margin: 10px 40px 40px 40px;
+        margin: 10px 30px 40px 30px;
     }
 }
 
@@ -159,16 +161,15 @@ h2 {
     }
 
     header #nav-logo {
-        width: 100px;
-        margin: 25px 20px;
+        margin: 10px 30px;
     }
 
     footer #footer-nav #top-row li{
-        margin: 50px 40px;
+        margin: 30px 40px;
     }
     
     footer #footer-nav #bottom-row li{
-        margin: 10px 25px 40px 25px;
+        margin: 10px 25px 30px 25px;
     }
 }
 
@@ -180,31 +181,33 @@ h2 {
 
     footer #footer-nav #top-row li{
         font-size: 20px;
-        margin: 50px 30px;
+        margin: 30px 30px;
     }
     
     footer #footer-nav #bottom-row li{
         font-size: 20px;
-        margin: 10px 20px 40px 20px;
+        margin: 10px 20px 30px 20px;
     }
 }
 
 @media (max-width:670px) {
     h1 {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     footer #footer-nav ul li {
         display: block;
-        margin: 10px;
+        margin: 5px;
     }
 
     footer #footer-nav #top-row li {
-        margin: 10px;
+        margin: 7px;
+        font-size: 15px;
     }
 
     footer #footer-nav #bottom-row li {
-        margin: 10px;
+        margin: 7px;
+        font-size: 15px;
     }
 
     footer #footer-nav {
@@ -215,7 +218,8 @@ h2 {
 @media (max-width:615px) {
     header #nav ul li {
         display: block;
-        margin: 10px;
+        margin: 7px;
+        font-size: 15px;
     }
 
     header #nav {
