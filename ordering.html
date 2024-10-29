@@ -139,7 +139,7 @@
 
         <main>
             <h1>Ordering</h1>
-            <form id="order" onsubmit = "submissionAlert()">
+            <form id="order">
                 <h2 class="form-section">Contact information</h2>
                 <label>
                     First name<span class="accent-text">*</span>
@@ -157,6 +157,21 @@
                     Email address<span class="accent-text">*</span>
                     <input type="email" name="email" id="email-input" required/>
                 </label>
+                <label>
+                    Address<span class="accent-text">*</span>
+                    <input type="text" name="add1" id="add1-input" required/>
+                    <input type="text" name="add2" id="add2-input"/>
+                    <input type="text" name="add3" id="add3-input"/>
+                </label>
+                <label>
+                    State<span class="accent-text">*</span><br />
+                    <input type="text" name="state" id="state-input" required/>
+                </label>
+                <label>
+                    Zip code<span class="accent-text">*</span>
+                    <input type="text" name="zip" id="zip-input" required />
+                </label>
+                <p class="info">The Penguin Company provides services in the continental United States only.</p>
 
                 <h2 class="form-section">Rental information</h2>
                 <label>
@@ -167,9 +182,10 @@
                 <label>
                     Rental time<span class="accent-text">*</span>
                     <input type="time" name="time" id="time-input" min="09:00"
-                           max="17:00" step="900" required/>
-                    <!-- step 900 means increments of 15 mins -->
+                           max="17:00" step="1800" required/>
+                    <!-- step 900 means increments of 30 mins -->
                 </label>
+                <p class="info">Rentals may be booked between 09:00/9 AM and 17:00/5 PM, on the hour or half hour.</p>
                 <label>
                     Desired package<span class="accent-text">*</span>
                     <select name="pkg" id="pkg-sel" required>
@@ -181,21 +197,6 @@
                         <option value="photo">Penguin photo experience</option>
                     </select>
                 </label>
-                <label>
-                    Address<span class="accent-text">*</span>
-                    <input type="text" name="add1" id="add1-input" required/>
-                    <input type="text" name="add2" id="add2-input"/>
-                    <input type="text" name="add3" id="add3-input"/>
-                </label>
-                <label>
-                    State<span class="accent-text">*</span>
-                    <input type="text" name="state" id="state-input" required/>
-                </label>
-                <label>
-                    Zip code<span class="accent-text">*</span>
-                    <input type="text" name="zip" id="zip-input" required />
-                </label>
-                <p class="info">The Penguin Company provides services in the continental United States only.</p>
                 <label>
                     Special instructions (optional)
                     <textarea name="instr" id="instr-area" rows="4" cols="30"></textarea>
@@ -247,6 +248,8 @@
                     event.preventDefault();
                     return;
                 }
+
+                submissionAlert();
             };
 
             window.addEventListener("load", () => {
