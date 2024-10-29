@@ -226,15 +226,18 @@
             const fadeIn = () => {
                 document.getElementById("testimony").classList.remove("fading-out");
                 document.getElementById("testimony").classList.add("fading-in");
+
                 currentIndex = (currentIndex + 1) % testimonials.length;
                 document.getElementById("testimony").innerHTML =
                         testimonials[currentIndex];
+
                 setTimeout(nextTestimony, 1000 * 10); // (1000 ms/s)(5 s)
             }
 
             const nextTestimony = () => {
                 document.getElementById("testimony").classList.remove("fading-in");
                 document.getElementById("testimony").classList.add("fading-out");
+                
                 setTimeout(fadeIn, 1000 * 1); // (1000 ms/s)(1 s)
             }
 
