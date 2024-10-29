@@ -117,16 +117,116 @@
                 }
             }
 
+            #testimonials {
+                display: flex;
+            }
+
+            #quote-left {
+                color: #D0894B;
+                font-size: 100px;
+                display: inline-block;
+                flex-basis: 0;
+                margin: 0;
+                padding-right: 20px;
+                align-self: start;
+            }
+
+            #quote-right {
+                color: #D0894B;
+                font-size: 100px;
+                display: inline-block;
+                flex-basis: 0;
+                margin: 0;
+                padding-left: 20px;
+                align-self: end;
+            }
+
+            .fading-out {
+                opacity: 0;
+                transition: opacity 1s linear;
+            }
+
+            .fading-in {
+                opacity: 1;
+                transition: opacity 1s linear;
+            }
+
         </style>
 
         <script>
+
+            const testimonials = [
+                "The Penguin Playdate Package was pure joy! Having a penguin buddy for two hours was such a unique way"
+                + " to relax, and the personal handler made sure everything went smoothly. The penguin was so gentle"
+                + " and playful, and watching it waddle around with the toys was just adorable! A perfect escape from"
+                + " daily life—highly recommend!",
+
+                "This was such an unexpectedly wonderful experience! The penguin was so sweet and curious, and the"
+                + " handler made us feel completely comfortable. The whole vibe was cozy and heartwarming. Having"
+                + " those little snacks and toys to play with the penguin made it even more fun. I can't wait to"
+                + " book another session!",
+
+                "Best party ever, thanks to the penguins! Our guests were blown away by how interactive and"
+                + " entertaining the Party with Penguins package was. We loved getting to play games and take tons of"
+                + " pictures, and the penguin decorations were a hit. It's such a unique and memorable way to"
+                + " celebrate, and everyone's still talking about it!",
+
+                "Having penguins at our anniversary party was a dream come true! The penguins were friendly, and the"
+                + " photo ops were incredible. All the penguin-themed decor added a whimsical touch, and the handlers"
+                + " ensured everyone had a safe, fantastic experience. This truly made our event unforgettable!",
+
+                "I booked the Penguin Adventure Day as a surprise for my daughter's birthday, and it was absolutely"
+                + " magical. Spending the entire day with these adorable animals was something we'll never forget."
+                + " Learning about penguin care and feeding them made us feel like penguin experts! This package is"
+                + " worth every penny.",
+
+                "Such a phenomenal experience! I organized this for my classroom, and the kids were enchanted. We"
+                + " learned so much about penguins, played with them, and even took home souvenirs. The handlers were"
+                + " knowledgeable and engaging, making it both fun and educational. Definitely the highlight of our"
+                + " school year!",
+
+                "Our team absolutely loved the Corporate Penguin Chill Package! Spending time with these adorable"
+                + " penguins was such a refreshing break from the daily grind. The activities were lighthearted but"
+                + " brought us all closer as a team, and everyone left with big smiles. It's perfect for a company"
+                + " retreat!",
+
+                "Penguins in the office? Yes, please! This package gave our whole team a lift, and everyone felt a lot"
+                + " more relaxed. The penguins were delightful, and the team-building activities created such a"
+                + " positive vibe. Highly recommend this for any team looking for a unique bonding experience!",
+
+                "The Penguin Photo Experience was everything we hoped for and more! Our penguin was a natural in front"
+                + " of the camera, and the photographer captured amazing shots. It was the perfect way to get some"
+                + " adorable family photos, and the props were so fun! We've already framed a few of them at home!",
+
+                "This was a dream come true! I booked the Penguin Photo Experience for an engagement shoot, and the"
+                + " photos turned out spectacular. The penguin added such a fun and sweet touch to our special day."
+                + " It's such a unique way to create memories, and the pictures are absolutely priceless!"
+            ]
+            // Index of testimony to show
+            let currentIndex = 0;
+
+            const fadeIn = () => {
+                document.getElementById("testimony").classList.remove("fading-out");
+                document.getElementById("testimony").classList.add("fading-in");
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                document.getElementById("testimony").innerHTML =
+                        testimonials[currentIndex];
+                setTimeout(nextTestimony, 1000 * 5); // (1000 ms/s)(5 s)
+            }
+
+            const nextTestimony = () => {
+                document.getElementById("testimony").classList.remove("fading-in");
+                document.getElementById("testimony").classList.add("fading-out");
+                setTimeout(fadeIn, 1000 * 1); // (1000 ms/s)(1 s)
+            }
 
             $(document).ready (function()
             {   
                 $("#home-cta").hide();
                 $("#home-banner-btn").hide();
                 $("#home-cta").fadeIn(1000);
-                $("#home-banner-btn").fadeIn(1000);
+
+                nextTestimony();
             })
 
         </script>
@@ -172,7 +272,7 @@
                 </p>
             </div>
 
-            <div class="main-series" style="margin-bottom: 100px;">
+            <div class="main-series">
                 <img src="Images/Home Page/Penguin March Small.jpg" alt="Penguins in front of crowd"/>
                 <h2 class="section-heading">
                     Book a penguin today for the coolest adventure!
@@ -183,6 +283,19 @@
                     Packages also come with penguin-themed activities for your event.
                     View our different packages on our <a href = "services.html">Services</a> page!
                 </p>
+            </div>
+
+            <div class="main-series">
+                <h2 class="section-heading">
+                    Testimonials
+                </h2>
+                <div id="testimonials">
+                    <p id="quote-left">“</p>
+                    <p id="testimony">
+                        The Penguin Playdate Package was pure joy! Having a penguin buddy for two hours was such a unique way to relax, and the personal handler made sure everything went smoothly. The penguin was so gentle and playful, and watching it waddle around with the toys was just adorable! A perfect escape from daily life—highly recommend!
+                    </p>
+                    <p id="quote-right">”</p>
+                </div>
             </div>
         </main>
 
