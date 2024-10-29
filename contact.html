@@ -93,6 +93,10 @@
                 }
             }
 
+            .accent-text {
+                color: #ff0000;
+            }
+
         </style>
 
         <script>
@@ -123,12 +127,12 @@
             <p class="contact-info">Send us a message!</p>
             <form id = "contactMessage" onsubmit = "submissionAlert()">
                 <label>
-                    Your email address<br />
-                    <input type="email" name="email" id="email-input"/>
+                    Your email address<span class="accent-text">*</span><br />
+                    <input type="email" name="email" id="email-input" required/>
                 </label>
                 <label>
-                    Your message to us
-                    <textarea name="msg" id="msg-area" rows="4" cols="30"></textarea>
+                    Your message to us<span class="accent-text">*</span>
+                    <textarea name="msg" id="msg-area" rows="4" cols="30" required></textarea>
                 </label>
                 <input type="submit" id="order-submit" value="Submit Message"/>
             </form>
