@@ -89,19 +89,12 @@ footer #footer-nav ul li{
     display: inline-block;
     font-weight: bolder;
     text-align: center;
+    margin: 25px 100px 25px;
 }
 
 footer #footer-nav ul a{
     text-decoration: none;
     color: #DBE3E5;
-}
-
-footer #footer-nav #top-row li{
-    margin: 30px 100px 50px;
-}
-
-footer #footer-nav #bottom-row li{
-    margin: 10px 60px 30px 60px;
 }
 
 footer #footer-nav ul a:hover {
