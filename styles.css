@@ -47,6 +47,13 @@ header #nav ul a {
     text-align: center;
 }
 
+nav ul #order-btn a {
+    padding: 7px 12px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #253542;
+}
+
 header #nav ul a:hover {
     color: #D9B45D;
 }
