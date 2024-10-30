@@ -65,26 +65,27 @@
             h2 {
                 font-size: 30px;
                 text-align: center;
-                margin-top: 30px;
+                margin: 40px 40px 20px 40px;
             }
 
-            main img {
-                margin: 0px 40px 25px 40px;
+            .main-series img {
+                margin-right: 50px;
                 float: left;
             }
 
-            .section-heading {
-                margin: 80px 30px 30px;
-            }
-
             .main-series {
-                margin-bottom: 90px;
+                margin-bottom: 0px;
             }
 
-            footer {
-                margin-top: -40px;
+            .main-series a {
+                color: #D0894B;
+                font-weight: bold;
+                text-decoration: none;
             }
 
+            .main-series a:hover {
+                color: #D9B45D;
+            }
 
             @media (max-width:1100px) {
                 .main-series {
@@ -106,16 +107,12 @@
                     margin-top: 20px;
                 }
 
-                p {
-                    margin-bottom: 0px;
-                }
-
                 .section-heading {
                     margin: 30px 30px 30px;
                 }
             }
 
-            @media (max-width:800px) {
+            @media (max-width:820px) {
                 .main-series img {
                     float: none;
                     display: block;
@@ -138,6 +135,8 @@
 
             #testimonials {
                 display: flex;
+                width: 100%;
+                margin: auto;
             }
 
             #quote-left {
@@ -290,6 +289,8 @@
                 </p>
             </div>
 
+            <br clear="all" />
+
             <div class="main-series">
                 <img src="Images/Home Page/Penguin March Small.jpg" alt="Penguins in front of crowd"/>
                 <h2 class="section-heading">
@@ -303,8 +304,10 @@
                 </p>
             </div>
 
+            <br clear="all" />
+
             <div class="main-series">
-                <h2 class="section-heading">
+                <h2 class="section-heading" style="margin-bottom: 5px; margin-top: 0px;">
                     Testimonials
                 </h2>
                 <div id="testimonials">
