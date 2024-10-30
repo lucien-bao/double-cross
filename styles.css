@@ -15,10 +15,14 @@ header {
     margin-inline-start: 0px;
 }
 
-header #nav-logo {
+header #nav-logo-outside {
+    display: none;
+}
+
+header #nav-logo-inside {
     display: inline-block;
     width: 90px;
-    margin: 10px 120px;
+    /* margin: 10px 120px; */
 }
 
 header #nav {
@@ -26,19 +30,25 @@ header #nav {
     font-size: 30px;
     vertical-align: top;
     position: relative;
-    padding: 10px 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 header #nav ul {
     list-style-type: none;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
     padding: 0px;
-    margin-left: -40px;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 header #nav ul li {
     display: inline-block;
-    margin: 0px 60px;
 }
 
 header #nav ul a {
@@ -126,19 +136,6 @@ h2 {
 }
 
 @media (max-width:1390px) {
-    header #nav-logo {
-        margin: 10px 90px;
-    }
-
-    header #nav ul li {
-        margin: 0px 35px;
-        font-size: 25px;
-    }
-
-    header #nav ul {
-        margin-left: -40px;
-    }
-
     footer #footer-nav ul li{
         margin: 25px 50px 25px;
     }
@@ -153,18 +150,6 @@ h2 {
 }
 
 @media (max-width:1040px) {
-    header #nav ul li {
-        margin: 0px 25px;
-    }
-
-    header #nav ul {
-        margin-left: -10px;
-    }
-
-    header #nav-logo {
-        margin: 10px 30px;
-    }
-
     footer #footer-nav ul li{
         margin: 25px 30px 25px;
         font-size: 20px;
@@ -180,9 +165,12 @@ h2 {
 }
 
 @media (max-width:870px) {
+    header #nav-logo-inside {
+        width: 75px;
+    }
+
     header #nav ul li {
-        margin: 0px 10px;
-        font-size: 20px;
+        font-size: 25px;
     }
 
     footer #footer-nav #top-row li{
@@ -221,17 +209,42 @@ h2 {
     }
 }
 
-@media (max-width:660px) {
-    header #nav ul li {
-        font-size: 20px;
-        margin: 7px 0px;
-        width: 140px;
-        text-align: center;
+@media (max-width:750px) {
+    header #nav-logo-inside {
+        width: 60px;
     }
 
+    header #nav ul li {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:615px) {
+    /* 2x2 activation */
+    header #nav ul #list-item-inside {
+        display: none;
+    }
+
+    header #nav-logo-outside {
+        display: inline-block;
+        width: 60px;
+    }
+
+    header #nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-left: 20px;
+        gap: 40px;
+    }
+    
     header #nav ul {
-        margin: 10px 0px;
-        width: 287px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        padding-right: 20px;
+        height: 80%;
     }
 }
 
@@ -239,24 +252,22 @@ h2 {
     .image {
         width: 300px;
     }
-}
 
-@media (max-width:470px) {
-    header {
-        height: 90px;
-    }
-
-    header #nav-logo {
-        margin: 10px;
-        width: 70px;
-    }
-
-    header #nav ul li {
-        width: 136px;
+    header #nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-left: 10px;
+        gap: 10px;
     }
 
     header #nav ul {
-        margin: 0px;
-        width: 280px;
+        padding-right: 5px;
+    }
+    nav ul #order-btn a {
+        padding: 4px 8px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        color: #253542;
     }
 }
