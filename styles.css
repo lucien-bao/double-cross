@@ -139,28 +139,12 @@ h2 {
     footer #footer-nav ul li{
         margin: 25px 50px 25px;
     }
-
-    footer #footer-nav #top-row li{
-        margin: 30px 60px;
-    }
-    
-    footer #footer-nav #bottom-row li{
-        margin: 10px 30px 40px 30px;
-    }
 }
 
 @media (max-width:1040px) {
     footer #footer-nav ul li{
         margin: 25px 30px 25px;
         font-size: 20px;
-    }
-
-    footer #footer-nav #top-row li{
-        margin: 30px 40px;
-    }
-    
-    footer #footer-nav #bottom-row li{
-        margin: 10px 25px 30px 25px;
     }
 }
 
@@ -172,15 +156,20 @@ h2 {
     header #nav ul li {
         font-size: 25px;
     }
+}
 
-    footer #footer-nav #top-row li{
-        font-size: 20px;
-        margin: 30px 30px;
+@media (max-width:750px) {
+    header #nav-logo-inside {
+        width: 60px;
     }
-    
-    footer #footer-nav #bottom-row li{
+
+    header #nav ul li {
         font-size: 20px;
-        margin: 10px 20px 30px 20px;
+    }
+
+    footer #footer-nav ul li{
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
@@ -194,28 +183,8 @@ h2 {
         margin: 5px;
     }
 
-    footer #footer-nav #top-row li {
-        margin: 7px;
-        font-size: 15px;
-    }
-
-    footer #footer-nav #bottom-row li {
-        margin: 7px;
-        font-size: 15px;
-    }
-
     footer #footer-nav {
         padding: 10px;
-    }
-}
-
-@media (max-width:750px) {
-    header #nav-logo-inside {
-        width: 60px;
-    }
-
-    header #nav ul li {
-        font-size: 20px;
     }
 }
 
